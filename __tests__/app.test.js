@@ -9,6 +9,7 @@ describe('app routes', async() => {
     expect(res.text).toEqual('hi');
   });
 
+  
   it('post method, /echo path', async() => {
     const res = await request(app)
       .post('/echo')
@@ -18,12 +19,14 @@ describe('app routes', async() => {
     expect(res.status).toEqual(200);
   });
 
+
   it('get method, /red path', async() => {
     const res = await request(app)
       .get('/red');
 
     expect(res.text).toEqual('<h1>red</h1>');
   });
+
 
   it('get method, /greem path', async() => {
     const res = await request(app)
@@ -32,12 +35,14 @@ describe('app routes', async() => {
     expect(res.text).toEqual('<h1>green</h1>');
   });
 
+
   it('get method, /blue path', async() => {
     const res = await request(app)
       .get('/blue');
 
     expect(res.text).toEqual('<h1>blue</h1>');
   });
+
 
   it('get method, /random path', async() => {
     const res = await request(app)
