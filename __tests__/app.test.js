@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('app routes', () => {
-  it('get method, / path', async() => {
+  it.only('get method, / path', async() => {
     const res = await request(app)
       .get('/');
 
