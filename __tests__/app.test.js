@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('app routes', async() => {
+describe('app routes', () => {
   it('get method, / path', async() => {
     const res = await request(app)
       .get('/');
@@ -9,7 +9,7 @@ describe('app routes', async() => {
     expect(res.text).toEqual('hi');
   });
 
-  
+
   it('post method, /echo path', async() => {
     const res = await request(app)
       .post('/echo')
@@ -28,7 +28,7 @@ describe('app routes', async() => {
   });
 
 
-  it('get method, /greem path', async() => {
+  it('get method, /green path', async() => {
     const res = await request(app)
       .get('/green');
 
