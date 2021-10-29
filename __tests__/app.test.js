@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('app routes', () => {
-  it.only('get method, / path', async() => {
+  it('get method, / path', async() => {
     const res = await request(app)
       .get('/');
 
@@ -13,9 +13,9 @@ describe('app routes', () => {
   it('post method, /echo path', async() => {
     const res = await request(app)
       .post('/echo')
-      .send({ 'name': 'ranObj', 'purpose': 'test' });
+      .send('test message');
 
-    expect(res.text).toEqual({ name: 'ranObj', purpose: 'test' });
+    expect(res.text).toEqual('test message');
     expect(res.status).toEqual(200);
   });
 
